@@ -1,0 +1,21 @@
+{
+  "name": "cypress_base",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
+  },
+  "author": "Rimo",
+  "license": "ISC",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^16.0.3",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "cucumber": "^6.0.7",
+    "cypress": "^12.11.0",
+    "cypress-xpath": "^2.0.1",
+    "xpath": "^0.0.32"
+  }
+}
