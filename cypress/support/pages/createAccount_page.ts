@@ -12,7 +12,7 @@ const GENDER_OPTION_FEMALE = '.popover-viewport>.ios>.md>.ion-activatable:nth-ch
 
 const DOB_FIELD = 'input[placeholder=\'DD/MM/YYYY\']';
 const DOB_YEAR_SCROLLER = '.mbsc-datetime-year-wheel > .mbsc-scroller-wheel';
-const DOB_MONTH_SCROLLER = 'mbsc-datetime-month-wheel > .mbsc-scroller-wheel';
+const DOB_MONTH_SCROLLER = '.mbsc-datetime-month-wheel > .mbsc-scroller-wheel';
 const DOB_DAY_SCROLLER = '.mbsc-datetime-day-wheel > .mbsc-scroller-wheel';
 
 const TERMS_CONDITIONS_LINK = '//span[contains(text(),\'Read and accept the terms of use and collection st\')]';
@@ -81,8 +81,8 @@ export class CreateAccount_page extends BasePage {
 
         cy.get(DOB_FIELD).click();
         cy.get(DOB_YEAR_SCROLLER).should('be.visible').contains(userDetails.dob_year).scrollIntoView().click({force: true});
-       // cy.get(DOB_MONTH_SCROLLER).should('be.visible').contains(userDetails.dob_month).scrollIntoView().click({force: true});
-        //cy.get(DOB_DAY_SCROLLER).should('be.visible').contains(userDetails.dob_day).scrollIntoView().click({force: true});
+        cy.get(DOB_MONTH_SCROLLER).should('be.visible').contains(userDetails.dob_month).scrollIntoView().click({force: true});
+        cy.get(DOB_DAY_SCROLLER).should('be.visible').contains(userDetails.dob_day).scrollIntoView().click({force: true});
         cy.get('body').click();
 
         cy.xpath(GENDER_DROPDOWN).click();
@@ -95,6 +95,6 @@ export class CreateAccount_page extends BasePage {
         cy.get('.ion-no-border > .primary').click();
 
     }
-    
+
 
 }

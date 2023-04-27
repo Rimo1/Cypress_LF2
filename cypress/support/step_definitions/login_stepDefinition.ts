@@ -24,5 +24,5 @@ Then(/^Click on the Get started button$/, function () {
 });
 
 Then("Fill the sign up form", function () {
-    createAccountPage.signUpNewUser(user2);
+    createAccountPage.signUpNewUser(user1);
 });
