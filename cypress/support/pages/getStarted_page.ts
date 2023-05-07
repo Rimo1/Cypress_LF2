@@ -9,7 +9,7 @@ export class GetStarted_page extends BasePage {
 
     clickOnGetStartedBtn(){
         cy.get(GET_STARTED_BTN).scrollIntoView();
-        this.click(GET_STARTED_BTN)
+        this.click(GET_STARTED_BTN);
     }
 
 

@@ -20,6 +20,9 @@ const I_ACCEPT_BTN ='//ion-button[contains(text(),\'I accept\')]';
 const TERMS_AND_CONDITIONS_POPUP = '.ion-padding-horizontal.md.content-ltr';
 const TERMS_AND_CONDITIONS_POPUP_HEADER = '//h2[contains(text(),\'terms of use and collection statement\')]';
 const SCROLLER_ELEMENT = '.inner-scroll.scroll-y';
+const SIGNUP_METHOD_BUTTON ='form.ng-dirty > .ion-color';
+const SIGNUP_METHOD_EMAIL_BUTTON = ':nth-child(2) > .filter-button';
+
 
 
  export interface SignUpForm {
@@ -60,8 +63,8 @@ export class CreateAccount_page extends BasePage {
     provideDOB(){
         cy.get(DOB_FIELD).click();
         cy.get(DOB_YEAR_SCROLLER).should('be.visible').contains('1993').scrollIntoView().click({force: true});
-      //  cy.get(DOB_MONTH_SCROLLER).should('be.visible').contains('June').scrollIntoView().click({force: true});
-     //   cy.get(DOB_DAY_SCROLLER).should('be.visible').contains('19').scrollIntoView().click({force: true});
+        cy.get(DOB_MONTH_SCROLLER).should('be.visible').contains('June').scrollIntoView().click({force: true});
+        cy.get(DOB_DAY_SCROLLER).should('be.visible').contains('19').scrollIntoView().click({force: true});
         cy.get('body').click();
     }
 
@@ -92,8 +95,17 @@ export class CreateAccount_page extends BasePage {
         cy.wait(2000);
         cy.get(TERMS_AND_CONDITIONS_POPUP).shadow().find(SCROLLER_ELEMENT).scrollTo('bottom');
         cy.wait(2000);
-        cy.get('.ion-no-border > .primary').click();
+        cy.xpath(I_ACCEPT_BTN).click();
 
+    }
+
+    clickOnSignUpMethod(){
+
+        cy.get(SIGNUP_METHOD_BUTTON).should('be.visible').click({force: true});
+    }
+
+    clickOnEmailButton(){
+        cy.get(SIGNUP_METHOD_EMAIL_BUTTON).should('be.visible').click({force: true});
     }
 
 

@@ -19,3 +19,33 @@ export const user2:SignUpForm={
     dob_month: 'July',
     dob_day: '23'
 };
+
+export const user3:SignUpForm={
+    firstName: 'User3_FirstName',
+    lastName: 'User3_LastName',
+    email: 'email@dataset.user3',
+    phoneNumber: 6459027303,
+    dob_year: '1993',
+    dob_month: 'July',
+    dob_day: '23'
+};
+
+export const user4:SignUpForm={
+    firstName: 'User4_FirstName',
+    lastName: 'User4_LastName',
+    email: 'email@dataset.user4',
+    phoneNumber: 6459027304,
+    dob_year: '1994',
+    dob_month: 'July',
+    dob_day: '24'
+};
+
+export const user5:SignUpForm={
+    firstName: 'User5_FirstName',
+    lastName: 'User5_LastName',
+    email: 'email@dataset.user5',
+    phoneNumber: 6459027305,
+    dob_year: '1995',
+    dob_month: 'July',
+    dob_day: '25'
+};
