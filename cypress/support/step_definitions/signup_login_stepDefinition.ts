@@ -12,27 +12,27 @@ Given("The user is on the LF welcome page", function () {
     welcomePage.visitWelcomePage();
 
 });
-Then(/^Click on the Join and get recommendation button$/, function () {
+Then(/^The user clicks on the Join and get recommendation button$/, function () {
 
    welcomePage.clickOnJoinAndGetRecommendationBtn();
 
 });
 
-Then(/^Click on the Get started button$/, function () {
+Then(/^Clicks on the Get started button from the How to get started page$/, function () {
     cy.scrollTo('bottom', { ensureScrollable: false });
     getStartedPage.clickOnGetStartedBtn();
 });
 
-Then("Fill the sign up form", function () {
+Then("Fills the sign up form with desired data", function () {
     createAccountPage.signUpNewUser(user5);
 });
 
-Then("Sign up with email", function () {
+Then("Signs up with email", function () {
     createAccountPage.clickOnSignUpMethod();
     createAccountPage.clickOnEmailButton();
 });
 
-Then("The user has clicked on the magic link", function () {
+Then("Clicks on the received magic link", function () {
 
     const username = 'curveqa'
     const password = 'Curve@2023'
@@ -54,4 +54,7 @@ Then("The user has clicked on the magic link", function () {
         // Visit the magic link
         cy.visit(magicLink)
     })
+});
+Then(/^The user should get signed in and land on the Welcome back page$/, function () {
+
 });
