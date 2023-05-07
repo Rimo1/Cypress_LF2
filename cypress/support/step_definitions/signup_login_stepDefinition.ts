@@ -32,7 +32,7 @@ Then("Signs up with email", function () {
     createAccountPage.clickOnEmailButton();
 });
 
-Then("Clicks on the received magic link", function () {
+Then("The user has received the magic lick and clicked on it", function () {
 
     const username = 'curveqa'
     const password = 'Curve@2023'
@@ -55,6 +55,7 @@ Then("Clicks on the received magic link", function () {
         cy.visit(magicLink)
     })
 });
-Then(/^The user should get signed in and land on the Welcome back page$/, function () {
+
+Then(/^The user should be notified that a secure login link is sent$/, function () {
 
 });
