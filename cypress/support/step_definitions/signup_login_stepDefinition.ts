@@ -2,7 +2,7 @@ import {Given,Then } from "@badeball/cypress-cucumber-preprocessor";
 import {Welcome_page} from '../pages/welcome_page';
 import {GetStarted_page} from '../pages/getStarted_page';
 import  {CreateAccount_page} from "../pages/createAccount_page";
-import {user1, user2, user3, user4, user5} from "../utils/dataSet";
+import {user1, user2} from "../utils/dataSet";
 
 const welcomePage = new Welcome_page();
 const getStartedPage = new GetStarted_page();
@@ -24,7 +24,7 @@ Then(/^Clicks on the Get started button from the How to get started page$/, func
 });
 
 Then("Fills the sign up form with desired data", function () {
-    createAccountPage.signUpNewUser(user5);
+    createAccountPage.signUpNewUser(user1);
 });
 
 Then("Signs up with email", function () {
@@ -32,7 +32,12 @@ Then("Signs up with email", function () {
     createAccountPage.clickOnEmailButton();
 });
 
-Then("The user has received the magic lick and clicked on it", function () {
+Then("The user has received the magic link and clicked on it", function () {
+
+    cy.clearCookies()
+    cy.getCookies().should('be.empty')
+    cy.clearLocalStorage();
+    cy.clearAllSessionStorage();
 
     const username = 'curveqa'
     const password = 'Curve@2023'
@@ -42,7 +47,7 @@ Then("The user has received the magic lick and clicked on it", function () {
         method: 'GET',
         url: 'https://lf-api-staging.herokuapp.com/api/v1/tokens/generate?&',
         qs: {
-            email: user5.email
+            email: user2.email
         },
         headers: {
             'Authorization': auth
