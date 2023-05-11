@@ -39,7 +39,7 @@ export class Personalisation_diagnosis_page extends BasePage {
          cy.get(DIAGNOSIS_TYPE_DROPDOWN).click();
          cy.get(DIAGNOSIS_OPTION_BLOOD_DISORDER).click();
          cy.get(DIAGNOSIS_SUBTYPE_DROPDOWN).click();
-         cy.get(BLOOD_DISORDER_SUBTYPE_ITP).click({multiple: true,force:true});
+         cy.get(BLOOD_DISORDER_SUBTYPE_SUBTYPE_UNKNOWN).click({multiple: true,force:true});
  }
 
  clickOnNextButton(){

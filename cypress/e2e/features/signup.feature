@@ -14,7 +14,9 @@ Feature: Sign up Functionality
     Given The user has received the magic link and clicked on it
     Then The user should land on the Welcome back page where the 1st step of onboarding is marked as done
     When The user clicks on the Continue button
-    And Provides data regarding diagnosis type and subtype
+#    And Provides data regarding diagnosis type and subtype
+#    And Selects diagnosis stage
+    And Provides first and second concerns
 
 
 
