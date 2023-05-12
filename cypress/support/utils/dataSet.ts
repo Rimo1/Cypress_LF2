@@ -131,6 +131,26 @@ export const user15:SignUpForm={
     dob_day: '31'
 };
 
+export const user17:SignUpForm={
+    firstName: 'CY_FirstName17',
+    lastName: 'CY_LastName17',
+    email: 'email@dataset.cy17',
+    phoneNumber: 4000000017,
+    dob_year: '1997',
+    dob_month: 'July',
+    dob_day: '31'
+};
+
+export const user18:SignUpForm={
+    firstName: 'CY_FirstName18',
+    lastName: 'CY_LastName18',
+    email: 'email@dataset.cy18',
+    phoneNumber: 4000000018,
+    dob_year: '1998',
+    dob_month: 'July',
+    dob_day: '31'
+};
+
 export const onboardingConcerns1:ConcernsOnboarding={
     firstConcern: 'Onboarding Concern 1',
     secondConcern: 'Onboarding Concern 2'
