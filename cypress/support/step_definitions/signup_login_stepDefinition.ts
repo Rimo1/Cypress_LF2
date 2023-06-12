@@ -2,7 +2,7 @@ import {Given,Then } from "@badeball/cypress-cucumber-preprocessor";
 import {Welcome_page} from '../pages/welcome_page';
 import {GetStarted_page} from '../pages/getStarted_page';
 import  {CreateAccount_page} from "../pages/createAccount_page";
-import {user17, user18} from "../utils/dataSet";
+import {user22} from "../utils/dataSet";
 
 const welcomePage = new Welcome_page();
 const getStartedPage = new GetStarted_page();
@@ -11,6 +11,10 @@ const createAccountPage = new CreateAccount_page();
 Given("The user is on the LF welcome page", function () {
     cy.reload();
     cy.reload();
+    cy.clearCookies();
+    cy.clearLocalStorage();
+    cy.clearAllCookies();
+
     welcomePage.visitWelcomePage();
 
 });
@@ -26,7 +30,7 @@ Then(/^Clicks on the Get started button from the How to get started page$/, func
 });
 
 Then("Fills the sign up form with desired data", function () {
-    createAccountPage.signUpNewUser(user18);
+    createAccountPage.signUpNewUser(user22);
 });
 
 Then("Signs up with email", function () {
@@ -49,7 +53,7 @@ Then("The user has received the magic link and clicked on it", function () {
         method: 'GET',
         url: 'https://lf-api-staging.herokuapp.com/api/v1/tokens/generate?&',
         qs: {
-            email: user18.email
+            email: user22.email
         },
         headers: {
             'Authorization': auth

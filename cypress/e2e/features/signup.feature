@@ -18,6 +18,7 @@ Feature: Sign up Functionality
     And Selects diagnosis stage
     And Provides first and second concerns
     And Rates first and second concerns along with well being
+    And Log out
 
 
 

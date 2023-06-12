@@ -9,6 +9,7 @@ import {onboardingConcerns1} from "../utils/dataSet";
 
 
 
+
 const welcomeBackPage = new WelcomeBack_page();
 const personalisation_diagnosis_page = new Personalisation_diagnosis_page();
 const personalisation_journey_stage_page = new Personalisation_journey_stage_page();
@@ -48,4 +49,9 @@ When(/^Rates first and second concerns along with well being$/, function () {
     personalisation_well_being_rating_page.setWellBeingRangeSliderValue(4);
     personalisation_well_being_rating_page.clickOnNextButton();
 
+});
+
+When(/^Log out$/, function () {
+    cy.get('ul > :nth-child(1) > .profile-btn').click();
+    cy.get('#signOutLink').click();
 });
